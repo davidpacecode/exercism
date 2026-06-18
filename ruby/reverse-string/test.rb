@@ -1,0 +1,20 @@
+class Reverser
+
+  def self.reverse(string)
+    # string.reverse.nil? ? nil : string.reverse
+    string.reverse
+  end
+end
+
+puts Reverser.reverse("hello")
+puts "fuck you"
+
+=begin
+Write your code for the 'Reverse String' exercise in this file. Make the tests in
+`reverse_string_test.rb` pass.
+
+To get started with TDD, see the `README.md` file in your
+`ruby/reverse-string` directory.
+=end
+
+
