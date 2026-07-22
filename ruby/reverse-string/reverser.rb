@@ -1,6 +1,7 @@
 class Reverser
   def self.reverse(string)
-    string.reverse
+    string.reverse.nil? ? nil : string.reverse
+    # string.reverse
   end
 end
 
