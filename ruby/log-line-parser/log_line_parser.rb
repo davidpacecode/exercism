@@ -8,11 +8,11 @@ class LogLineParser
   end
 
   def log_level
-    @line.slice(@line.index('[') + 1, @line.index(']') - 1).strip
+  @line.slice(@line.index('[') + 1, @line.index(']') - 1).strip.downcase
   end
 
   def reformat
-    "#{message} (#{log_level.downcase})"
+    "#{message} (#{log_level})"
   end
 end
 
