@@ -10,7 +10,7 @@ class BoutiqueInventory
 
   def cheap
     @items.select { |item|
-      item[:price] <= 30.0 }
+      item[:price] < 30.0 }
   end
 
   def out_of_stock
@@ -27,7 +27,7 @@ class BoutiqueInventory
 #     @items.map { |item|
 #     item[:quantity_by_size] }.sum
     items.map { |item|
-    item[:quantity_by_size] }.map { |qbs| qbs }.sum
+    item[:quantity_by_size] }.map { |qbs| qbs.values.sum }.sum
   end
 
   private
