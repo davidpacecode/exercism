@@ -24,8 +24,6 @@ class BoutiqueInventory
   end
 
   def total_stock
-#     @items.map { |item|
-#     item[:quantity_by_size] }.sum
     items.map { |item|
     item[:quantity_by_size] }.map { |qbs| qbs.values.sum }.sum
   end
