@@ -3,7 +3,7 @@ class SimpleCalculator
 
   def self.calculate(first_operand, second_operand, operation)
     if !first_operand.is_a?(Integer) || !second_operand.is_a?(Integer)
-      puts "you fucked up"
+      rescue puts "you fucked up"
       return
     end
 
