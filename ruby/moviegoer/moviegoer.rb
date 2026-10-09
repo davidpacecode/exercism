@@ -39,6 +39,6 @@ puts Moviegoer.new(17).watch_scary_movie?
 puts Moviegoer.new(21, member: true).claim_free_popcorn!
 #=> 🍿
 
-puts Moviegoer.new(17, member: false).claim_free_popcorn!
+puts Moviegoer.new(17, member: true).claim_free_popcorn!
 #=> Exception was raised! (NotMovieClubMemberError)
 
