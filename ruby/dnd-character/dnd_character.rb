@@ -10,19 +10,20 @@ class DndCharacter
   
   attr_accessor :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma
 
-  def modifier(constitution)
+  def self.modifier(constitution)
     ((constitution - 10)/2).floor
   end
 
   def initialize
-    @strength = top_three_rolls
-    @dexterity = top_three_rolls
-    @constitution = top_three_rolls
-    @intelligence = top_three_rolls
-    @wisdom = top_three_rolls
-    @charisma = top_three_rolls
+    @strength = top_three_rolls.sum
+    @dexterity = top_three_rolls.sum
+    @constitution = top_three_rolls.sum
+    @intelligence = top_three_rolls.sum
+    @wisdom = top_three_rolls.sum
+    @charisma = top_three_rolls.sum
 
-    @hitpoints = self.modifier(@constitution) + 10
+
+    @hitpoints = ((@constitution - 10)/2).floor + 10
   end
 
   def top_three_rolls
@@ -36,5 +37,5 @@ end
 
 # - A static method for `modifier(constitution)`.
 # - Methods for `strength`, `dexterity`, `constitution`, `intelligence`, `wisdom`, `charisma`, and `hitpoints`
-# puts DndCharacter.modifier(3)
-# puts DndCharacter.new
+puts DndCharacter.modifier(3)
+puts DndCharacter.new
