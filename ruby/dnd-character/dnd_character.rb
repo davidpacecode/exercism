@@ -8,7 +8,7 @@ To get started with TDD, see the `README.md` file in your
 
 class DndCharacter
   
-  attr_accessor :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma
+  attr_accessor :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :hitpoints
 
   def self.modifier(constitution)
     ((constitution - 10)/2).floor
@@ -37,5 +37,5 @@ end
 
 # - A static method for `modifier(constitution)`.
 # - Methods for `strength`, `dexterity`, `constitution`, `intelligence`, `wisdom`, `charisma`, and `hitpoints`
-puts DndCharacter.modifier(3)
-puts DndCharacter.new
+# puts DndCharacter.modifier(3)
+# puts DndCharacter.new.hitpoints
