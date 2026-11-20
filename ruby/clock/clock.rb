@@ -35,6 +35,14 @@ class Clock
     @time
   end
 
+  def hour
+    @hour
+  end
+
+  def minute
+    @minute
+  end
+  
   def seconds
     (@hour * 60 * 60) + (@minute * 60)
   end
@@ -43,16 +51,17 @@ class Clock
     @time.strftime('%H:%M')
   end
 
-  def +(time2)
-    @time + time2.seconds
+  def +(clock2)
+    @time + clock2.seconds
   end
  
-  def -(time2)
-   @time - time2.seconds
+  def -(clock2)
+   @time - clock2.seconds
   end
 
-  def ==(time2)
-    @time.to_s.strip == time2.to_s.strip
+  def ==(clock2)
+    # @time.to_s.strip == clock2.to_s.strip
+    @hour == clock2.hour && @minute == clock2.minute
   end
 end
 
