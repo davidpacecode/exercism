@@ -14,8 +14,10 @@ class Clock
     if (base_hours + addnl_hours) >= 0
       @hour = (base_hours + (addnl_hours)).remainder(24)
     else
-      @hour = (24 - (base_hours + addnl_hours).abs).remainder(24).abs
-      puts "@hour is #{(24 - (base_hours + addnl_hours).abs).remainder(24)}"
+      # @hour = (24 - (base_hours + addnl_hours).abs).remainder(24).abs
+      # puts "@hour is #{(24 - (base_hours + addnl_hours).abs).remainder(24)}"
+      puts "#{(0 - (base_hours + addnl_hours).abs).remainder(24)}"
+      @hour = 24 - ((base_hours + addnl_hours).abs).remainder(24)
     end
 
     puts "#{minute}.remainder(60) = #{minute.remainder(60)}"
@@ -91,7 +93,21 @@ end
 # '22:10', 
 # puts Clock.new(hour: -121, minute: -5810).to_s
 
-clock1 = Clock.new(hour: 13, minute: 49)
-clock2 = Clock.new(hour: -83, minute: 49)
-puts clock1
-puts clock2
+# clock1 = Clock.new(hour: 13, minute: 49)
+# clock2 = Clock.new(hour: -83, minute: 49)
+# puts clock1
+# puts clock2
+
+clock1 = Clock.new(hour: 18, minute: 7)
+clock2 = Clock.new(hour: -54, minute: -11_513)
+
+ puts clock1
+ puts clock2
+# puts Time.new(2026, 1, 1, 12, 7).strftime('%H:%M')
+
+clock = Clock.new(minute: 3)
+clock2 = Clock.new(minute: 4)
+puts (clock - clock2).to_s
+puts "23:59"
+puts "clock.hour = #{clock.hour} clock.minute = #{clock.minute}"
+puts "clock2.hour = #{clock2.hour} clock2.minute = #{clock2.minute}"
